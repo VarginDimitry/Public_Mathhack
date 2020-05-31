@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block my_title %}{{ page_title }}{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/content/content_of_one_task.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <div class="void">
+
+        <h3 align="center" style="margin: 400px;">{{ message }}</h3>
+
+    </div>
+{% endblock %}

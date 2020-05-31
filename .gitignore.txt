@@ -1,0 +1,25 @@
+# Text backup files
+*.bak
+
+#Media
+media/*
+!*media
+
+#IDE
+.idea
+idea
+
+#Pycache
+__pycache__/
+*/__pycache__/
+*.py[cod]
+.pyc
+*.pyc
+
+#Database
+db.sqlite3
+
+#Migrations
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py

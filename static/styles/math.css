@@ -1,0 +1,7 @@
+.math-root{
+	/*Перед этим обязательно поставить
+		"&radic;" без кавычек
+	*/
+	text-decoration-line: overline;
+    text-decoration-color: darkblue;
+}

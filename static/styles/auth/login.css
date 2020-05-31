@@ -1,0 +1,90 @@
+.login-content *{
+    margin: 0;
+    padding: 0;
+}
+
+.login-content{
+    width: 1200px;
+    margin: 100px auto auto;
+    background-color: #cad5ff;
+    border-radius: 10px;
+}
+
+.inner-login-content{
+    width: 60%;
+    margin: 0 20% 0 20%;
+    padding-bottom: 20px;
+}
+
+.login-header{
+    width: 50%;
+    margin: 0 25% 30px 25%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.login-form{
+    text-align: center;
+}
+
+.login-tab-text{
+    margin: 10px 0 0 0;
+    font-size: 18pt;
+    color: black;
+}
+
+.login-tab{
+    background-color: white;
+	width: 50%;
+    margin: 0 24% 0 24%;
+    height: 35px;
+	border-radius: 5px;
+}
+
+.inner-login-tab{
+    font-size: 14pt;
+
+    background-color: white;
+	border: none;
+	border-radius: 5px;
+
+	height: 100%;
+	width: 100%;
+
+    padding: 0 0 0 5px;
+    margin: 0;
+}
+
+.login-button{
+    height: 50px;
+    margin: 20px auto 0 auto;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.inner-login-button{
+    font-size: 14pt;
+
+    height: 100%;
+    width: 100%;
+    border: none;
+
+    border-radius: 10px;
+}
+
+.inner-login-button:hover{
+    background-color: #6077dd;
+
+    transition: background-color 0.2s ease-out;
+}
+
+.to-reg-link{
+    margin: 20px 20% 10px 20%;
+    text-align: center;
+    width: 60%;
+}
+
+.errors-in-auth{
+    text-align: center;
+    width: 100%;
+}

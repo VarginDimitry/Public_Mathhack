@@ -1,0 +1,124 @@
+
+.header-content{
+    padding-top: 10px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.author-content, .date-content{
+    float: left;
+    width: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.author-content{
+    text-align: left;
+}
+
+.date-content{
+    text-align: right;
+}
+
+.text-for-part-C{
+    height: 30px;
+    color: #b6bfc8;
+}
+
+.SolvingVariantForm{
+    width: 100%;
+    height: 100%;
+}
+
+#id_task1, #id_task2, #id_task3, #id_task4, #id_task5, #id_task6, #id_task7, #id_task8, #id_task9, #id_task10, #id_task11, #id_task12,
+ #id_task13, #id_task14, #id_task15, #id_task16, #id_task17, #id_task18, #id_task19{
+    width: 50%;
+    border: solid black 1px;
+    margin: 10px;
+    height: 25px;
+    font-size: 14pt;
+}
+
+.end-button{
+    text-align: center;
+    width: 100%;
+}
+
+.inner-end-button{
+    border: solid black 2px;
+    border-radius: 10px;
+    height: 40px;
+    width: 120px;
+    font-size: 14pt;
+    transition: 0.125s linear;
+}
+
+.inner-end-button:hover{
+    background-color: #6077dd;
+}
+
+.results-header{
+    width: 190px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto auto auto auto;
+}
+
+.results-table{
+    width: 100%;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.inner-results-table{
+    border: solid 1px black;
+    border-spacing: 0;
+
+    width: 70%;
+    margin: auto;
+    background-color: white;
+}
+
+.results-table-cell{
+    border: solid 1px black;
+    width: 33%;
+    margin: 0;
+    padding: 0;
+}
+
+.after-solving-text{
+    font-size: 14pt;
+    height: 25px;
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+
+.answer-button{
+    font-size: 14pt;
+    margin: 20px auto 20px auto;
+    cursor: pointer;
+    width: 200px;
+    padding-top: 5px;
+    height: 30px;
+    background-color: #cad5ff;
+    border-radius: 5px;
+}
+
+.answer-button:hover{
+    background-color: #cad5ff;
+}
+
+.inner-content-task-answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.inner-content-task-answer-full, .inner-content-task-text{
+    text-align: justify;
+}

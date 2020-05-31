@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+    <link rel="shortcut icon" href="{% static 'media/My_dp_45px.jpg' %}" type="image/x-icon" style="border-radius: 100%">
+	<title>{% block my_title %}MATHHACK{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/body.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/footer.css'%}">
+	<script type="text/javascript" src="{% static 'Scripts/test.js' %}"></script>
+    {% block links %}{% endblock %}
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <a href='/'>
+            <img src="{% static 'media/My_dp_45px.jpg' %}" class="img_logo">
+            <div class="inner-logo">MathHack</div>
+        </a>
+    </div>
+    <div class="search-form">
+        <form action="{% url 'search' %}" method="get" class="inner-search-form">
+                <div class="search-text">
+                    <input type="text" name="q" placeholder="&nbsp;Введите номер задания" class="inner-search-text">
+                </div>
+                <div class="search-button">
+                        <button type="submit" class="inner-search-button">
+                                <img src="{% static 'media/search_icon.png' %}" alt="S" class="inner-inner-search-button">
+                        </button>
+                </div>
+        </form>
+    </div>
+    {% if user.is_authenticated %}
+        <div class="user-name"><div class="inner-user-name">
+            {{ user.username }}
+        </div><div class="pointer"></div></div>
+        <div class="img_user">
+            {% if user.customer.user_image.url %}
+                <img src="{{ user.customer.user_image.url }}" class="inner-img_user" alt="Not founded">
+            {% else %}
+                <img src="{% static 'media/None_user.jpg' %}" class="inner-img_user" alt="Not found">
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="user-name"><div class="inner-user-name">Войти</div>
+
+        <div class="pointer"></div></div>
+
+        <div class="img_user">
+            <img src="{% static 'media/None_user.jpg' %}" class="inner-img_user" alt="Not found">
+        </div>
+    {% endif %}
+
+    <div class="auth">
+        {% if user.is_authenticated %}
+            <a href="/id{{ user.id }}" style="text-decoration: none; color: white;"><div class="auth-tab out">
+                <div class="inner-auth-tab">Моя страница</div>
+            </div></a>
+            <a href="/logout" style="text-decoration: none; color: white;"><div class="auth-tab out">
+                <div class="inner-auth-tab">Выход</div>
+            </div></a>
+        {% else %}
+        <div class="inner-auth">
+            <a href="/login" style="text-decoration: none; color: white;"><div class="auth-tab inp">
+                <div class="inner-auth-tab">Вход</div>
+            </div></a>
+            <a href="/registration" style="text-decoration: none; color: white;"><div class="auth-tab reg">
+                <div class="inner-auth-tab">Регистрация</div>
+            </div></a>
+        </div>
+        {% endif %}
+    </div>
+    <script>
+        OpenHeaderMenu();
+    </script>
+</div>
+
+
+{% block content %}{% endblock %}
+
+<div class="footer">
+    <div class="inner-footer">
+        <div class="footer-text">Сайт сделан для подготовки школьников к ЕГЭ по математике. Проект курсовой работы Дмитрия Варгина.</div>
+        <div class="footer-feedback">Обратная связь:
+            <a href="mailto:dimitri.vargin@yandex.ru"><!--<img class="footer-icons" src="{% static 'media/mail_icon.png'%}">-->dimitri.vargin@yandex.ru</a>
+            <br>
+            <a href="https://vk.com/iq998764512"><img class="footer-icons" src="{% static 'media/vk_icon.png' %}"></a>
+            <a href="https://t.me/dmitryvargin"><img class="footer-icons" src="{% static 'media/tg_icon.png' %}"></a>
+            <a href="https://github.com/VarginDimitry"><img class="footer-icons" src="{% static 'media/git_icon.png'%}"></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

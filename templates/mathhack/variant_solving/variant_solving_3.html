@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+{% load static %}
+{% block my_title %}{{ page_title }}{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/content/content_of_tasks.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/content/content-variant.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="void">
+        <div class="tasks_content">
+            <div class="results-header"><h1>Результаты</h1></div>
+            <div class="inner-tasks_content">
+                <div class="results-table">
+                    <table class="inner-results-table">
+                        <tr>
+                            <td class="results-table-cell">Номер</td> <td class="results-table-cell">Ваш ответ</td> <td class="results-table-cell">Правильный ответ</td>
+                        </tr>
+                        {% for task in variant.tasks.all %}
+                            {% if forloop.counter == 1 %}
+                                <tr style="background-color: {% if stask1 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task1 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 2 %}
+                                <tr style="background-color: {% if stask2 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task2 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 3 %}
+                                <tr style="background-color: {% if stask3 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task3 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 4 %}
+                                <tr style="background-color: {% if stask4 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task4 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 5 %}
+                                <tr style="background-color: {% if stask5 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task5 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 6 %}
+                                <tr style="background-color: {% if stask6 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task6 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 7 %}
+                                <tr style="background-color: {% if stask7 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task7 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 8 %}
+                                <tr style="background-color: {% if stask8 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task8 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 9 %}
+                                <tr style="background-color: {% if stask9 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task9 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 10 %}
+                                <tr style="background-color: {% if stask10 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task10 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 11 %}
+                                <tr style="background-color: {% if stask11 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task11 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+                            {% elif forloop.counter == 12 %}
+                                <tr style="background-color: {% if stask12 == '+' %}
+                                                                green
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task12 }}</td> <td class="results-table-cell">{{ task.answer }}</td>
+                                </tr>
+
+
+                            {% elif forloop.counter == 13 %}
+                                <tr style="background-color: {% if stask13 == '2' %}
+                                                                green
+                                                            {% elif stask13 == '1' %}
+                                                                orange
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task13 }}</td> <td class="results-table-cell">2</td>
+                                </tr>
+                            {% elif forloop.counter == 14 %}
+                                <tr style="background-color: {% if stask14 == '2' %}
+                                                                green
+                                                            {% elif stask14 == '1' %}
+                                                                orange
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task14 }}</td> <td class="results-table-cell">2</td>
+                                </tr>
+                            {% elif forloop.counter == 15 %}
+                                <tr style="background-color: {% if stask15 == '2' %}
+                                                                green
+                                                            {% elif stask15 == '1' %}
+                                                                orange
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task15 }}</td> <td class="results-table-cell">2</td>
+                                </tr>
+                            {% elif forloop.counter == 16 %}
+                                <tr style="background-color: {% if stask16 == '3' %}
+                                                                green
+                                                            {% elif stask16 == '1' or stask16 == '2' %}
+                                                                orange
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task16 }}</td> <td class="results-table-cell">3</td>
+                                </tr>
+                            {% elif forloop.counter == 17 %}
+                                <tr style="background-color: {% if stask17 == '3' %}
+                                                                green
+                                                            {% elif stask17 == '1' or stask17 == '2' %}
+                                                                orange
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task17 }}</td> <td class="results-table-cell">3</td>
+                                </tr>
+                            {% elif forloop.counter == 18 %}
+                                <tr style="background-color: {% if stask18 == '4' %}
+                                                                green
+                                                            {% elif stask18 == '1' or stask18 == '2' or stask18 == '3' %}
+                                                                orange
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task18 }}</td> <td class="results-table-cell">4</td>
+                                </tr>
+                            {% elif forloop.counter == 19 %}
+                                <tr style="background-color: {% if stask19 == '4' %}
+                                                                green
+                                                            {% elif stask19 == '1' or stask19 == '2' or stask19 == '3' %}
+                                                                orange
+                                                            {% else %}
+                                                                red
+                                                            {% endif %};">
+                                    <td class="results-table-cell">{{ task.type }}</td> <td class="results-table-cell">{{ solved_variant.task19 }}</td> <td class="results-table-cell">4</td>
+                                </tr>
+
+                            {% endif %}
+                        {% endfor %}
+                    </table>
+                    <br>
+                </div>
+
+
+                <div class="after-solving-text">
+                    <h3>{{ sv_id }}</h3>
+                    Вы набрали {{ solved_variant.total }}/32 баллов. Посмотрите ответы и проанализируйте решение.
+                </div>
+
+                {% for tasks in variant.tasks.all %}
+                <div class="one-task">
+                    <div class="inner-one-task">
+                        <div class="task_id">&nbsp;&nbsp;#{{ tasks.id }}</div> <div class="task_type">Задание {{ tasks.type }}</div>
+                        <div class="task_author">Автор: {% for author in tasks.author.all %}
+                                                            {{ author.name }}
+                                                        {% endfor %}</div><br>
+                        <!--Image if it exist-->
+                        {% if tasks.image %}<img src="{{ tasks.image.url }}" alt="" style="max-height: 300px">{% endif %}
+                        <p class="inner-content-task-text">&nbsp;&nbsp;&nbsp;&nbsp;{{ tasks.text }}</p>
+                        <!--Answer and button for it-->
+                        <div class="answer-button">&nbsp;Посмотреть решение&nbsp;</div>
+                        <div class="inner-content-task-answer">
+                            {% if tasks.ful_answer %}<br><p class="inner-content-task-answer-full">&nbsp;&nbsp;&nbsp;&nbsp;{{ tasks.ful_answer }}</p><br>{% endif %}
+                            {% if tasks.answer %}<p class="inner-content-task-answer-small">&nbsp;&nbsp;&nbsp;&nbsp;{{ tasks.answer }}</p><br>{% endif %}
+                        </div>
+                        <div class="task_date">&nbsp;&nbsp;{{ tasks.date.date }}</div>
+                        <br><br>
+                    </div>
+                </div>
+                {% endfor %}
+                <script>OpenAnswer()</script>
+            </div>
+        </div>
+    </div>
+{% endblock %}

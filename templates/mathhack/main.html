@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% block my_title %}MATHHACK{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/content/content_of_main.css' %}">
+{% endblock %}
+
+
+
+
+
+{% block content %}
+<div class="void">
+<div class="content">
+    <div class="inner-content">
+
+        <div class="tabs-container">
+            <span class="section-name"><h2>ВАРИАНТЫ</h2></span>
+            <ul class="tabs">
+                <li class="active tab-name">
+                    <a href="" class="inner-tab-name">Наши Варианты</a>
+                </li>
+                <li class="tab-name">
+                    <a href="" class="inner-tab-name">Решу ЕГЭ</a>
+                </li>
+                <li class="tab-name">
+                    <a href="" class="inner-tab-name">Алекс Ларин</a>
+                </li>
+            </ul>
+
+            <div class="tabs-content">
+                <div class="tabs-panel active" data-index="0">
+                    {% for variants in variant_list %}
+                        {% for author in variants.author.all %}
+                            {% if author.name == "Наши варианты" %}
+                                <a href="{{ variants.id }}_variant_step_1" class="variant-link"><div class="tabs-content-variant"><div class="inner-tabs-content-variant">{{ variants.id }}</div></div></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="tabs-panel" data-index="1">
+                    {% for variants in variant_list %}
+                        {% for author in variants.author.all %}
+                            {% if author.name == "Решу ЕГЭ" %}
+                                <a href="{{ variants.id }}_variant_step_1" class="variant-link"><div class="tabs-content-variant"><div class="inner-tabs-content-variant">{{ variants.id }}</div></div></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="tabs-panel" data-index="2">
+                    {% for variants in variant_list %}
+                        {% for author in variants.author.all %}
+                            {% if author.name == "Алекс Ларин" %}
+                                <a href="{{ variants.id }}_variant_step_1" class="variant-link"><div class="tabs-content-variant"><div class="inner-tabs-content-variant">{{ variants.id }}</div></div></a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <script>SwapTabsInMainMenu();</script>
+        </div>
+
+        <div class="inner-tasks-container">
+            <h2 class="section-name">ЗАДАНИЯ ПО ТЕМАМ</h2>
+            <div class="inner-inner-tasks-container">
+                <div class="inner-inner-inner-tasks-container">
+                    <ul>
+                        <br>
+                        <li><a class="inner-task" href="1_type_tasks"><div class= "task">&ensp;Задание 1. Простейшие текстовые задачи</div></a></li>
+                        <li><a class="inner-task" href="2_type_tasks"><div class= "task">&ensp;Задание 2. Графики и диаграммы</div></a></li>
+                        <li><a class="inner-task" href="3_type_tasks"><div class= "task">&ensp;Задание 3. Планиметрия: вычисления</div></a></li>
+                        <li><a class="inner-task" href="4_type_tasks"><div class= "task">&ensp;Задание 4. Простейшие задачи на теорию вероятностей</div></a></li>
+                        <li><a class="inner-task" href="5_type_tasks"><div class= "task">&ensp;Задание 5. Простейшие уравнения</div></a></li>
+                        <li><a class="inner-task" href="6_type_tasks"><div class= "task">&ensp;Задание 6. Простейшая планиметрия</div></a></li>
+                        <li><a class="inner-task" href="7_type_tasks"><div class= "task">&ensp;Задание 7. Производная и первообразная</div></a></li>
+                        <li><a class="inner-task" href="8_type_tasks"><div class= "task">&ensp;Задание 8. Простейшая стереометрия</div></a></li>
+                        <li><a class="inner-task" href="9_type_tasks"><div class= "task">&ensp;Задание 9. Вычисления</div></a></li>
+                        <li><a class="inner-task" href="10_type_tasks"><div class= "task">&ensp;Задание 10. Прикладные задачи</div></a></li>
+                        <li><a class="inner-task" href="11_type_tasks"><div class= "task">&ensp;Задание 11. Текстовые задачи</div></a></li>
+                        <li><a class="inner-task" href="12_type_tasks"><div class= "task">&ensp;Задание 12. Функции и работа с графиками</div></a></li>
+                        <li><a class="inner-task" href="13_type_tasks"><div class= "task">&ensp;Задание 13. Уравнения</div></a></li>
+                        <li><a class="inner-task" href="14_type_tasks"><div class= "task">&ensp;Задание 14. Стереометрия</div></a></li>
+                        <li><a class="inner-task" href="15_type_tasks"><div class= "task">&ensp;Задание 15. Неравенства</div></a></li>
+                        <li><a class="inner-task" href="16_type_tasks"><div class= "task">&ensp;Задание 16. Планиметрия</div></a></li>
+                        <li><a class="inner-task" href="17_type_tasks"><div class= "task">&ensp;Задание 17. Задачи на банковские услуги и оптимизацию</div></a></li>
+                        <li><a class="inner-task" href="18_type_tasks"><div class= "task">&ensp;Задание 18. Уравнения и неравенства с параметром</div></a></li>
+                        <li><a class="inner-task" href="19_type_tasks"><div class= "task">&ensp;Задание 19. Свойства чисел и последовательностей</div></a></li>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+{% endblock %}

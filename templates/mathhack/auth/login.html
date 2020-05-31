@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block my_title %}Вход{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/auth/login.css' %}">
+{% endblock %}
+
+
+
+
+
+{% block content %}
+<div class="void">
+<div class="login-content">
+    <div class="inner-login-content">
+        <div class="login-header"><h1 class="inner-login-header">ВХОД</h1></div>
+        <form class="login-form" method="POST" action="">
+            {% csrf_token %}
+            <div class="inner-login-form">
+                <div class="login-tab-text">Имя</div>
+                <div class="login-tab">
+                    <input type="text" name="username" class="inner-login-tab">
+                </div>
+                <div class="login-tab-text">Пароль</div>
+                <div class="login-tab">
+                    <input type="password" name="password" class="inner-login-tab" >
+                </div>
+                <div class="login-button">
+                    <input class="inner-login-button" type="submit" value="Войти">
+                </div>
+            </div>
+        </form>
+        <div class="errors-in-auth">
+            {% for message in messages %}
+                <p id="messages">{{message}}</p>
+            {% endfor %}
+        </div>
+        <div class="errors-in-auth">
+            {% if form.errors %}
+                <span style="color: red">Проверьте следующие поля!</span><br>
+                {{ form.errors }}
+            {% endif %}
+        </div>
+        <div class="to-reg-link">Еще не зарегистрированы? <a href="/registration">Зарегистрироваться</a></div>
+    </div>
+</div>
+</div>
+{% endblock %}

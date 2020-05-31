@@ -1,0 +1,23 @@
+
+    <div class="tasks_content">
+        <div class="inner-tasks_content">
+                <div class="one-task">
+                    <div class="task_id">&nbsp;&nbsp;#{{ task.id }}</div> <div class="task_type">Задание {{ task.type }}</div>
+                    <div class="task_author">Автор: {% for author in tasks.autho.all %}
+                                                        {{ author.name }}
+                                                    {% endfor %}</div><br>
+                    <!--Image if it exist-->
+                    {% if task.image %}<img src="{{ task.image.url }}" alt="" style="height: 300px">{% endif %}
+                    <p class="inner-content-task-text">&nbsp;&nbsp;&nbsp;&nbsp;{{ task.text }}</p>
+                    <!--Answer and button for it-->
+                    <div class="answer-button">&nbsp;Посмотреть решение&nbsp;</div>
+                    <div class="inner-content-task-answer">
+                        {% if task.ful_answer %}<p class="inner-content-task-answer-full">&nbsp;&nbsp;&nbsp;&nbsp;{{ task.ful_answer }}</p>{% endif %}
+                        {% if task.answer %}<p class="inner-content-task-answer-small">&nbsp;&nbsp;&nbsp;&nbsp;{{ task.answer }}</p>{% endif %}
+                    </div>
+                    <div class="task_date">&nbsp;&nbsp;{{ task.date.date }}</div>
+                    <br><br>
+                </div>
+            <script>OpenAnswer()</script>
+        </div>
+    </div>

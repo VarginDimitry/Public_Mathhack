@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block my_title %}{{ page_title }}{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/auth/user_page.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <div class="void">
+        <div class="user-page">
+            <form method="POST" action="" enctype="multipart/form-data">
+            <div class="inner-user-page">
+
+                <div class="page-user-header">
+
+                    <div class="page-username header-tab" id="start_username">
+                            <div>{{ this_user.username }}</div>
+                    </div>
+                    <div class="average-statistics header-tab" id="start_average_statistics">
+                        Средний балл: {{ average_point }}
+                    </div>
+
+                    <div class="page-user-grade header-tab" id="start_grade">
+                        Класс:{{ this_user.customer.grade }}
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <div class="user-page-content">
+                    <div class="page-user-image">
+                        <img class="inner-page-user-image" id="user-image" src="{{ this_user.customer.user_image.url }}" alt="Not found">
+                    </div>
+
+                    <div class="page-variant-statistics">
+                        {% csrf_token %}
+                        <div class="change-form">Имя: </div>{{ form.change_username }}
+                        <div class="change-form">Класс: </div>{{ form.change_grade }}
+                        <div class="change-form">Фото(1:1 и не больше 4МБ): </div>{{ form.change_user_image }}
+                        {% for message in messages %}
+                            <p id="messages">{{message}}</p>
+                        {% endfor %}
+                    </div>
+                    <br>
+                    {% if this_user.id == user.id %}
+                        <a href="" class="href-change">
+                            <button class="change-button-used" id="inner-change-button" type="submit" style="margin-bottom: 10px">
+                                Сохранить
+                            </button>
+                        </a><br>
+                        <a href="/id{{ pk }}" class="href-change">
+                            <button class="change-button-used" id="reset-button" type="button">
+                                Отменить
+                            </button>
+                        </a>
+                        <script>WidthChangeButton();</script>
+                    {% endif %}
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

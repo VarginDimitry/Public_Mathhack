@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block my_title %}{{ page_title }}{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/content/content_of_tasks.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/content/content-variant.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="void">
+        <div class="tasks_content">
+            <div class="header-content">
+                <h2>Вариант №{{ variant.id }}</h2>
+            </div>
+            <div style="width: 100%">
+                <div class="author-content">
+                    Автор:
+                    {% for author in variant.author.all %}
+                        &nbsp;&nbsp;{{ author }}
+                    {% endfor %}
+                </div>
+                <div class="date-content">
+                    {{ variant.date.date }}&nbsp;&nbsp;
+                </div>
+            </div>
+            <br>
+            <div class="inner-tasks_content">
+                {% for task in variant.tasks.all %}
+                    {% if task.type > 12 %}
+                        <div class="one-task">
+                            <div class="inner-one-task">
+                                <h4 style="padding: 5px">Задание {{ task.type }}</h4><br>
+                                <!--Image if it exist-->
+                                {% if task.image %}<img src="{{ task.image.url }}" alt="" style="max-height: 300px">{% endif %}
+                                <p class="inner-content-task-text">&nbsp;&nbsp;&nbsp;&nbsp;{{ task.text }}</p>
+                                <br>
+                                <div class="inner-content-task-answer-2part">
+                                    <p>Решение:</p>
+                                    {% if task.ful_answer %}<br><p class="inner-content-task-answer-full">&nbsp;&nbsp;&nbsp;&nbsp;{{ task.ful_answer }}</p><br>{% endif %}
+                                    {% if task.answer %}<p class="inner-content-task-answer-small">&nbsp;&nbsp;&nbsp;&nbsp;{{ task.answer }}</p>{% endif %}
+                                </div>
+                                <br>
+                                <span style="color: brown">Оцени себя:</span><br>
+                                <select name="hero">
+                                    <option disabled>Введите быллы</option>
+                                    {% if task.type < 16 %}
+                                        <option value="t0">0</option>
+                                        <option value="t1">1</option>
+                                        <option value="t2">2</option>
+                                    {% elif task.type < 18 %}
+                                        <option value="t0">0</option>
+                                        <option value="t1">1</option>
+                                        <option value="t2">2</option>
+                                        <option value="t3">3</option>
+                                    {% else %}
+                                        <option value="t0">0</option>
+                                        <option value="t1">1</option>
+                                        <option value="t2">2</option>
+                                        <option value="t3">3</option>
+                                        <option value="t4">4</option>
+                                    {% endif %}
+                               </select>
+                               <br><br>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <div class="end-button">
+                    <a href="../{{ variant.id }}_variant_step_3">
+                        <button type="submit" class="inner-end-button">
+                        &nbsp;Закончить&nbsp;
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

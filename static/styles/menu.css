@@ -1,0 +1,27 @@
+.menu{
+	float: left;
+	font-size: 15pt;
+	height: 512px;
+	width: 150px;
+	margin: 100px 20px 20px;
+}
+
+.menu-tabs:hover{
+	border-radius: 5px;
+	background-color: #AFEEEE;
+}
+
+.inner-menu-tabs{
+	max-height: 0;
+	overflow: hidden;
+}
+/*&radic;*/
+.bottom-menu-line{
+	text-decoration-line: overline;
+    text-decoration-color: darkblue;
+}
+
+.inner-inner-menu-tabs:hover{
+	border-radius: 5px;
+	background-color: #AFEEEE;
+}

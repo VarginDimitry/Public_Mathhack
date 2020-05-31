@@ -1,0 +1,69 @@
+{% if page_obj.has_previous %}
+    <a href="?page=1">&laquo; Первая</a>
+    <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+{% endif %}
+
+<span class="current">
+    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+</span>
+
+{% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Далее</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">Последняя &raquo;</a>
+{% endif %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="id_task13"><span id="result"></span>
+<input type="text" id="id_task14">
+<input type="text" id="id_task15">
+<input type="text" id="id_task16">
+<input type="text" id="id_task17">
+<input type="text" id="id_task18">
+<input type="text" id="id_task19">
+
+<script type="text/javascript">
+
+function CorrectInputPoints() {
+	let grades = [document.getElementById('id_task13'), document.getElementById('id_task14'), document.getElementById('id_task15'),
+                document.getElementById('id_task16'), document.getElementById('id_task17'),
+                document.getElementById('id_task18'), document.getElementById('id_task19')];
+	for (let i = 0; i < grades.length; i++) {
+	    if (i < 3) {
+            grades[i].oninput = function () {
+                if (!(grades[i].value === '0' || grades[i].value === '1' || grades[i].value === '2')) {
+                    document.getElementById('id_task' + String(i + 13)).value = '';
+                }
+            };
+        } else if (i < 5){
+	        grades[i].oninput = function () {
+                if (!(grades[i].value === '0' || grades[i].value === '1' || grades[i].value === '2' || grades[i].value === '3')) {
+                    document.getElementById('id_task' + String(i + 13)).value = '';
+                }
+            };
+        } else {
+	        grades[i].oninput = function () {
+                if (!(grades[i].value === '0' || grades[i].value === '1' || grades[i].value === '2' || grades[i].value === '3' || grades[i].value === '4')) {
+                    document.getElementById('id_task' + String(i + 13)).value = '';
+                }
+            };
+        }
+    }
+}
+
+CorrectInputPoints();
+
+</script>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+</script>

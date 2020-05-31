@@ -1,0 +1,89 @@
+.registration-content *{
+    margin: 0;
+    padding: 0;
+}
+
+.registration-content{
+    width: 1200px;
+    margin: 100px auto auto;
+    background-color: #cad5ff;
+    border-radius: 10px;
+}
+
+.inner-registration-content{
+    width: 60%;
+    margin: 0 20% 0 20%;
+    padding-bottom: 20px;
+}
+
+.registration-header{
+    width: 50%;
+    margin: 0 25% 30px 25%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.registration-form{
+    text-align: center;
+}
+
+.registration-tab, .registration-under-tab{
+    font-size: 18pt;
+    color: black;
+}
+
+.registration-under-tab{
+    background-color: white;
+	width: 50%;
+    margin: 0 25% 0 25%;
+    height: 35px;
+	border-radius: 5px;
+}
+
+#id_username, #id_email, #id_password1, #id_password2{
+    background-color: white;
+	border: none;
+	border-radius: 5px;
+
+    font-size: 14pt;
+
+	height: 100%;
+	width: 100%;
+
+    padding: 0 0 0 5px;
+    margin: 0;
+}
+
+.registration-button{
+    height: 50px;
+    margin: 0 auto 0 auto;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.inner-registration-button{
+    font-size: 14pt;
+
+    height: 100%;
+    width: 100%;
+    border: none;
+
+    border-radius: 10px;
+}
+
+.inner-registration-button:hover{
+    background-color: #6077dd;
+
+    transition: background-color 0.2s ease-out;
+}
+
+.to-login-link{
+    margin: 20px 25% 10px 25%;
+    text-align: center;
+    width: 50%;
+}
+
+.errors-in-auth{
+    text-align: center;
+    width: 100%;
+}
