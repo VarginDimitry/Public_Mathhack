@@ -1,4 +1,6 @@
-#Django course work
+# Django course work
+
+---
 
 Mathhack is my first course work created to study what is Django and how it is work.
 
