@@ -8,6 +8,7 @@ media/*
 #IDE
 .idea
 idea
+venv
 
 #Pycache
 __pycache__/
